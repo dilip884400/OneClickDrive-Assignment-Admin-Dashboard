@@ -11,10 +11,11 @@ declare global {
 
 if (!globalThis.listingsStore) {
     globalThis.listingsStore = [
-        { id: '1', title: 'Toyota', status: 'pending' },
+        { id: '1', title: 'Lamborghini', status: 'pending' },
         { id: '2', title: 'Audi', status: 'pending' },
         { id: '3', title: 'BMW', status: 'pending' },
         { id: '4', title: 'Mercedes', status: 'pending' },
+        { id: '5', title: 'Ford', status: 'pending' },
     ]
 }
 

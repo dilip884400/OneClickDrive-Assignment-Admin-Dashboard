@@ -8,7 +8,6 @@ export default function LoginPage() {
     const [email, setEmail] = useState('')
 
     const handleLogin = async () => {
-        // simulate login
         document.cookie = `admin=${email}; path=/`
         toast.success('Logged in successfully!')
         router.push('/dashboard')
