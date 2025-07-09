@@ -1,4 +1,4 @@
-import ListingPage from "@/components/ListingPage";
+import ListingPage from "@/components/CarListingTable";
 import { listings } from "@/db/data";
 import { auditLogs } from "@/lib/log";
 

@@ -1,4 +1,4 @@
-import AuditTrail from "@/components/AuditTrail";
+import AuditTrail from "@/components/AuditTrailTable";
 import { auditLogs } from "@/lib/log";
 
 const Page = () => {
