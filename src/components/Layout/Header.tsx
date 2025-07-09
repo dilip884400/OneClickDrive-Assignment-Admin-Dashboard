@@ -31,15 +31,15 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
             <Menu size={24} />
           </button>
         )}
-        <h1 className="text-xl font-bold text-gray-800 tracking-tight">
+        <h1 className="md:text-xl text-xs font-bold text-gray-800 tracking-tight">
           Welcome to <span className="text-orange-500">Dashboard</span>
         </h1>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center md:gap-4 gap-2">
         <div className="flex flex-col text-right">
-          <span className="text-sm font-medium text-gray-800">
-            {adminEmail || "Admin"}
+          <span className="md:text-sm text-xs font-medium text-gray-800">
+            {adminEmail.slice(0, 20) || "Admin"}
           </span>
         </div>
         <Image
