@@ -10,21 +10,6 @@ This is a custom-built admin dashboard for managing user-generated car rental li
 
 ---
 
-## ✅ Features
-
-- 🔐 Mock Login Authentication with route protection
-- 📋 Paginated Listings Table with Edit / Approve / Reject actions
-- ✏️ Edit form with pre-filled data
-- 🧠 State-managed toast feedback (using Context API)
-- 🛠️ API Routes using Next.js for listing actions
-- 🔄 Server-side rendering with `getServerSideProps`
-- 🔎 Filter by listing status (pending, approved, rejected)
-- 📜 Audit Trail view with admin action logs
-- 💡 Clean UI using Tailwind CSS
-- 🌐 Responsive design across devices
-
----
-
 ## 🚀 How to Clone & Run the Project
 
 1. **Clone the Repository**
@@ -32,7 +17,10 @@ This is a custom-built admin dashboard for managing user-generated car rental li
 ```bash
 git clone https://github.com/dilip884400/OneClickDrive-Assignment-Admin-Dashboard.git
 cd OneClickDrive-Assignment-Admin-Dashboard
-```
 
-npm install
-npm run dev
+
+- npm install
+
+- npm run dev
+
+```
