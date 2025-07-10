@@ -1,17 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import { Lock } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    document.title = "Admin Login | Mock Dashboard";
-  }, []);
 
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,10 +33,16 @@ export default function LoginPage() {
         backgroundImage: "url('/images/cars/login-car-6.jpg')",
       }}
     >
-      <div className="backdrop-blur-sm bg-white/90 p-6 rounded-2xl shadow-xl w-[90%] max-w-sm space-y-5">
-        <h1 className="text-2xl font-bold text-center text-gray-800">
-          🔐 Mock Admin Login
-        </h1>
+      <div className="backdrop-blur-sm bg-white/90 p-6 rounded-2xl shadow-2xl w-[90%] max-w-sm space-y-6">
+        <div className="flex flex-col items-center space-y-2">
+          <div className="bg-orange-100 p-3 rounded-full">
+            <Lock className="text-orange-500 w-6 h-6" />
+          </div>
+          <h1 className="text-2xl font-semibold text-gray-800">Admin Login</h1>
+          <p className="text-sm text-gray-500">
+            Enter your email to access the dashboard
+          </p>
+        </div>
 
         <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700">
@@ -47,7 +50,7 @@ export default function LoginPage() {
           </label>
           <input
             type="email"
-            className="w-full p-2 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
             placeholder="admin@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -57,13 +60,13 @@ export default function LoginPage() {
 
         <button
           onClick={handleLogin}
-          className="w-full py-2 text-white bg-orange-500 rounded hover:bg-orange-600 transition-colors duration-200 cursor-pointer"
+          className="w-full py-2 text-white bg-orange-500 rounded hover:bg-orange-600 transition-all duration-200 font-medium"
         >
           Login
         </button>
 
-        <p className="text-center text-sm text-gray-700">
-          This is a mock login for admin dashboard demo.
+        <p className="text-center text-xs text-gray-600">
+          This is a mock login for admin dashboard.
         </p>
       </div>
     </div>

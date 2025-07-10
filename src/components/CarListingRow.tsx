@@ -23,7 +23,7 @@ const ListingRow = ({
       <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex items-center gap-3">
         <div className="w-10 h-10 relative rounded-full border-2 border-orange-500 overflow-hidden">
           <Image
-            src="/images/cars/car-icon.png"
+            src="/images/cars/sport-car.jpg"
             alt={listing.title}
             fill
             className="object-cover"
