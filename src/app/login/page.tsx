@@ -1,74 +1,68 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { Lock } from "lucide-react";
+import toast from "react-hot-toast";
 
-export default function LoginPage() {
+const LoginPage = () => {
   const router = useRouter();
+
   const [email, setEmail] = useState("");
+
   const [error, setError] = useState("");
 
-  const validateEmail = (email: string) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
+  const handleLoginClick = () => {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Email's not valid. Please recheck.");
 
-  const handleLogin = async () => {
-    if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
       return;
     }
+
     setError("");
     document.cookie = `admin=${email}; path=/`;
-    toast.success("Logged in successfully!");
+
+    toast.success("Login Success!!");
     router.push("/dashboard");
   };
 
   return (
     <div
-      className="flex justify-center items-center min-h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/images/cars/login-car-6.jpg')",
-      }}
+      className="min-h-screen flex items-center justify-center bg-center bg-cover"
+      style={{ backgroundImage: "url('/images/cars/login-car-6.jpg')" }}
     >
-      <div className="backdrop-blur-sm bg-white/90 p-6 rounded-2xl shadow-2xl w-[90%] max-w-sm space-y-6">
-        <div className="flex flex-col items-center space-y-2">
-          <div className="bg-orange-100 p-3 rounded-full">
-            <Lock className="text-orange-500 w-6 h-6" />
+      <div className="bg-white/80 backdrop-blur-md rounded-xl shadow-lg p-6 w-full max-w-sm">
+        <div className="text-center mb-6">
+          <div className="w-fit mx-auto bg-orange-100 p-2 rounded-full">
+            <Lock className="text-orange-500 w-5 h-5" />
           </div>
-          <h1 className="text-2xl font-semibold text-gray-800">Admin Login</h1>
-          <p className="text-sm text-gray-500">
-            Enter your email to access the dashboard
-          </p>
+          <h2 className="text-xl font-semibold mt-2">Admin Login</h2>
         </div>
 
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-700">
-            Email
-          </label>
+        <div className="mb-4">
+          <label className="block text-sm mb-1 text-black">Email</label>
           <input
             type="email"
-            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
-            placeholder="admin@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="admin@example.com"
+            className="w-full  py-2 border px-3  border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {error && <p className="text-sm text-red-600 mt-1">{error}</p>}
         </div>
 
         <button
-          onClick={handleLogin}
-          className="w-full py-2 text-white bg-orange-500 rounded hover:bg-orange-600 transition-all duration-200 font-medium"
+          onClick={handleLoginClick}
+          className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-md"
         >
           Login
         </button>
 
-        <p className="text-center text-xs text-gray-600">
-          This is a mock login for admin dashboard.
+        <p className="text-center text-xs text-gray-500 mt-4">
+          Mock/Demo login for access dashboard
         </p>
       </div>
     </div>
   );
-}
+};
+
+export default LoginPage;
