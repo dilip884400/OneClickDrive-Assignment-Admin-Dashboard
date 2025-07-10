@@ -64,7 +64,7 @@ const ListingPage = ({ initialListings }: any) => {
   }, []);
 
   return (
-    <main className="md:p-6 p-1">
+    <main className="md:p-6">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
         <h1 className="text-3xl font-extrabold text-gray-800 tracking-tight mb-4 md:mb-0">
           Car Listings
